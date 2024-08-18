@@ -12,16 +12,8 @@ const nodeTypes = {
 };
 
 function FlowEditor() {
-  const {
-    nodes,
-    edges,
-    onAddNode,
-    onDeleteNode,
-    onEdgesChange,
-    onConnect,
-    onNodeClick,
-    onNodesChange,
-  } = useFlowEditorStore();
+  const { nodes, edges, onEdgesChange, onConnect, onNodeClick, onNodesChange } =
+    useFlowEditorStore();
 
   return (
     <div className="h-full">

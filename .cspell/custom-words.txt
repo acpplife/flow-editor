@@ -1,5 +1,7 @@
 clsx
 dagre
 layouted
+lucide
+tailwindcss
 xyflow
 zustand
