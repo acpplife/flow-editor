@@ -31,22 +31,16 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-      - name: Setup pnpm
+      - name: Setup Node and pnpm
         uses: pnpm/action-setup@v2
         with:
           version: 9.x
-      - uses: actions/setup-node@v4
-        with:
           node-version: "20"
           cache: "pnpm"
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile --lockfile-path=pnpm-lock.yaml
+        run: pnpm install --frozen-lockfile
       - name: Build with Next.js
-        run: pnpm next build
+        run: pnpm next build & pnpm next export
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
