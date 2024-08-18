@@ -44,7 +44,7 @@ jobs:
           node-version: "20"
           cache: "pnpm"
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --frozen-lockfile --lockfile-path=pnpm-lock.yaml
       - name: Build with Next.js
         run: pnpm next build
       - name: Upload artifact
